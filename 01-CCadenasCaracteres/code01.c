@@ -14,7 +14,7 @@
     f - Modificar La Cadena Dada Con La Intersecion De Un Caracter Dado En Una Posicion Determinada
 */
 
-void LongitudCadena(char cadena[])
+void LongitudCadena(char cadena[]) //FUNCIONA CORRECTAMENTE
 {
     int cant = 0;
     
@@ -25,6 +25,50 @@ void LongitudCadena(char cadena[])
     }
 
     printf("La Cadena Tiene: %d Caracteres\n", cant);
+}
+
+void ConvertirASCII(char cadena[]) //Funciona Con Letras, No Probe El Comportameinto Con Numeros Dentro De La Cadena
+{
+    double ASCII = 0; //Limitado, Tendria Que Usar Un Array. 
+    int aux;
+
+    for (int i = 0; cadena[i] != '\0'; i++)
+    {
+        aux = cadena[i];
+
+        if (aux < 100)
+        {
+            ASCII *= 100;
+            ASCII += aux;
+        }
+        else
+        {
+            ASCII *= 1000;
+            ASCII += aux;
+        }
+    }
+
+    printf("El Equivalente En ASCII Es: %.0f", ASCII);
+}
+
+void ConvertirAMayuscula(char cadena[])
+{
+
+}
+
+void EliminarCaracter()
+{
+
+}
+
+void ConcatenarCadenas()
+{
+
+}
+
+void ModificarCadena()
+{
+
 }
 
 int main()
@@ -53,7 +97,7 @@ int main()
             LongitudCadena(cadena);
             break;
         case 66: case 98:
-            //Funcion B
+            ConvertirASCII(cadena);
             break;
         case 67: case 99:
             //Funcion C
