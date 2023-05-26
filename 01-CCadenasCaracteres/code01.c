@@ -53,7 +53,15 @@ void ConvertirASCII(char cadena[]) //Funciona Con Letras, No Probe El Comportame
 
 void ConvertirAMayuscula(char cadena[])
 {
+    for (int i = 0; cadena[i] != '\0'; i++)
+    {
+        if (cadena[i] >= 'a' && cadena[i] < 'z')
+        {
+            cadena[i] = cadena[i] - 32;
+        }
+    }
 
+    printf("%s", cadena);
 }
 
 void EliminarCaracter()
@@ -100,7 +108,7 @@ int main()
             ConvertirASCII(cadena);
             break;
         case 67: case 99:
-            //Funcion C
+            ConvertirAMayuscula(cadena);
             break;
         case 68: case 100:
             //Funcion D
