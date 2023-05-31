@@ -28,7 +28,7 @@ void LongitudCadena(char cadena[]) //FUNCIONA CORRECTAMENTE
 
 void ConvertirASCII(char cadena[]) //FUNCIONA CORRECTAMENTE
 {
-    double ASCII = 0; //Limitado, Tendria Que Usar Un Array. 
+    double ASCII = 0; 
     int aux;
 
     for (int i = 0; cadena[i] != '\0'; i++)
