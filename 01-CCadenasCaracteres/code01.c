@@ -11,13 +11,12 @@
     c - Convertir Una Cadena De Caracteres A Una Misma Cadena Con Sus Caracteres En Mayuscula
     d - Eliminar De Una Cadena De Caracteres Todas Las Ocurrencias De Un Caracter Dado
     e - Concatenar Al Final De Una Cadena, Una Segunda Cadena Dada
-    f - Modificar La Cadena Dada Con La Intersecion De Un Caracter Dado En Una Posicion Determinada
+    f - Modificar La Cadena Dada Con La Interseccion De Un Caracter Dado En Una Posicion Determinada
 */
 
 void LongitudCadena(char cadena[]) //FUNCIONA CORRECTAMENTE
 {
     int cant = 0;
-    
   
     for (int i = 0; cadena[i] != '\0'; i++)
     {
@@ -27,7 +26,7 @@ void LongitudCadena(char cadena[]) //FUNCIONA CORRECTAMENTE
     printf("La Cadena Tiene: %d Caracteres\n", cant);
 }
 
-void ConvertirASCII(char cadena[]) //Funciona Con Letras, No Probe El Comportameinto Con Numeros Dentro De La Cadena
+void ConvertirASCII(char cadena[]) //FUNCIONA CORRECTAMENTE
 {
     double ASCII = 0; //Limitado, Tendria Que Usar Un Array. 
     int aux;
@@ -48,10 +47,10 @@ void ConvertirASCII(char cadena[]) //Funciona Con Letras, No Probe El Comportame
         }
     }
 
-    printf("El Equivalente En ASCII Es: %.0f", ASCII);
+    printf("El Equivalente En ASCII Es: %.0f\n", ASCII);
 }
 
-void ConvertirAMayuscula(char cadena[])
+void ConvertirAMayuscula(char cadena[]) //FUNCIONA CORRECTAMENTE
 {
     for (int i = 0; cadena[i] != '\0'; i++)
     {
@@ -61,22 +60,86 @@ void ConvertirAMayuscula(char cadena[])
         }
     }
 
-    printf("%s", cadena);
+    printf("%s\n", cadena);
 }
 
-void EliminarCaracter()
+void EliminarCaracter(char cadena[]) //FUNCIONA CORRECTAMENTE
 {
+    char borrar[1];
+    char aux[TAM] = "";
+    int j = 0;
 
+    printf("La Cadena Acutal Es: %s\n", cadena);
+    printf("Ingrese El Caracter A Borrar: ");
+    scanf("%s", borrar);
+
+    for (int i = 0; cadena[i] != '\0'; i++)
+    {   
+        if (borrar[0] != cadena[i])
+        {
+            aux[j] = cadena[i];
+            j++;
+        }
+    }
+
+    printf("La Cadena Actual Es: %s\n", aux);
 }
 
-void ConcatenarCadenas()
+void ConcatenarCadenas(char cadena[]) //FUNCIONA CORRECTAMENTE
 {
+    char cadena2[TAM];
+    char cadena3[TAM];
+    int j = 0;
 
+    printf("Ingrese Una Cadena: ");
+    scanf("%s", cadena2);
+
+    for (int i = 0; cadena[i] != '\0'; i++)
+    {
+        cadena3[j] = cadena[i];
+        j++;
+    }
+
+    cadena3[j] = ' ';
+    j++;
+
+    for (int i = 0; cadena2[i] != '\0'; i++)
+    {
+        cadena3[j] = cadena2[i];
+        j++;
+    }
+
+    printf("La Nueva Cadena Es: %s\n", cadena3);
 }
 
-void ModificarCadena()
+void ModificarCadena(char cadena[]) //FUNCIONA CORRECTAMENTE
 {
+    char cadena2[TAM];
+    char cadena3[TAM];
+    char letra[1];
+    int j = 0;
 
+    printf("Ingrese La Letra Para Modificar: ");
+    scanf("%s", letra);
+
+    for (int i = 0; cadena[i] != letra[0]; i++)
+    {
+        cadena3[j] = cadena[i];
+        j++;
+    }
+
+    fflush(stdin);
+
+    printf("Ingrese La Nueva Cadena: %s", cadena3);
+    gets(cadena2);
+
+    for (int i = 0; cadena2[i] != '\0'; i++)
+    {
+        cadena3[j] = cadena2[i];
+        j++;
+    }
+    
+    printf("La Nueva Cadena Es: %s\n", cadena3);
 }
 
 int main()
@@ -111,13 +174,13 @@ int main()
             ConvertirAMayuscula(cadena);
             break;
         case 68: case 100:
-            //Funcion D
+            EliminarCaracter(cadena);
             break;
         case 69: case 101:
-            //Funcion E
+            ConcatenarCadenas(cadena);
             break;
         case 70: case 102:
-            //Funcion F
+            ModificarCadena(cadena);
             break;
         }
     }
